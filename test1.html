@@ -6,107 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(30, 30, 31);
-    margin: 0;
-}
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(30, 30, 31);
+            margin: 0;
+        }
 
-.lb {
-    background-color: rgba(41, 39, 39, 0.515);
-    margin: 25vw;
-    padding: 30px;
-    color: orange;
-    border: 2px solid rgb(42, 41, 41);
-    border-radius: 20px;
-    box-shadow: 3px 3px 10px 3px rgb(69, 67, 67);
-    position: relative;
-}
+        .lb {
+            background-color: rgba(41, 39, 39, 0.515);
+            margin: 25vw;
+            padding: 30px;
+            padding-left: 50px;
+            color: orange;
+            border: 2px solid rgb(42, 41, 41);
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px 3px rgb(69, 67, 67);
+            position: relative;
+        }
 
-.head {
-    margin-bottom: 20px;
-    text-align: center;
-}
+        .head {
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-.head h1 {
-    margin: 0;
-    font-size: 40px;
-    font-weight: bolder;
-}
+        .head h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: bolder;
+        }
 
-hr {
-    width: 40%;
-    margin: auto;
-    margin-bottom: 20px;
-    background-color: orange;
-    border: none;
-    height: 2px;
-}
+        hr {
+            width: 40%;
+            margin: auto;
+            margin-bottom: 20px;
+            background-color: orange;
+            border: none;
+            height: 2px;
+        }
 
-label {
-    font-weight: bolder;
-    font-size: larger;
-}
+        label {
+            font-weight: bolder;
+            font-size: larger;
+        }
 
-input[type="text"],
-input[type="password"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
 
-input[type="submit"] {
-    width: calc(100% - 22px);
-    margin: 10px 0;
-    padding: 6px;
-    font-size: 20px;
-    border-radius: 8px;
-    color: orange;
-    font-weight: bolder;
-    background-color: #1d1b1f;
-    transition: ease-out 0.3s;
-}
+        input[type="button"] {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 6px;
+            font-size: 20px;
+            border-radius: 8px;
+            color: orange;
+            font-weight: bolder;
+            background-color: #1d1b1f;
+            transition: ease-out 0.3s;
+        }
 
-input[type="submit"]:hover {
-    background-color: #1a1717;
-    box-shadow: 3px 3px 10px rgb(80, 72, 58);
-}
+        input[type="button"]:hover {
+            background-color: #1a1717;
+            box-shadow: 3px 3px 10px rgb(80, 72, 58);
+        }
 
-.light-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        /* Added animation */
+        .light1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            /* Adjust width as needed */
+            height: 3px;
+            background-color: Orange;
+            box-shadow: 0 0 10px 5px #f18902;
+            /* Neon glow effect */
+            transition: 0.5s ease-in-out;
+            animation: moveRight 3s linear infinite;
+            /* Use linear animation for constant speed */
 
-.light {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 50%;
-    display: none; /* Initially hidden */
-}
+        }
 
-.active {
-    display: block; /* Show when active */
-    animation: glow 1s infinite alternate;
-}
+        @keyframes moveRight {
+            from {
+                left: 0;
+                /* Start from the left */
+            }
 
-@keyframes glow {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
-}
+            to {
+                left: calc(100% - 100px);
+                /* Move to the right until the end of the container */
+            }
+        }
 
+        .light2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            /* Adjust width as needed */
+            height: 100px;
+            background-color: orange; 
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 0 10px 5px #f18902;
+            /* Neon glow effect */
+            animation: moveDown 3s linear infinite;
+
+        }
+
+        @keyframes moveDown {
+            0% {
+                height: 100;
+                top: 0;
+            }
+
+            100% {
+                height: 100px;
+                /* Adjust height as needed */
+                top: calc(100% - 100px);
+                /* Adjust distance as needed */
+            }
+        }
+
+        .light3 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            /* Adjust width as needed */
+            height: 3px;
+            background-color: Orange;
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 0 10px 5px #f18902;
+            /* Neon glow effect */
+            animation: moveLeft 3s linear infinite;
+            /* Use linear animation for constant speed */
+        }
+
+        @keyframes moveLeft {
+            from {
+                right: 0;
+                /* Start from the left */
+            }
+
+            to {
+                right: calc(100% - 100px);
+                /* Move to the right until the end of the container */
+            }
+        }
+
+
+        .light4 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3px;
+            /* Adjust width as needed */
+            height: 100px;
+            background-color: Orange;
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 0 10px 5px #f18902;
+            /* Neon glow effect */
+            animation: moveup 3s linear infinite;
+            /* Use linear animation for constant speed */
+        }
+
+        @keyframes moveup {
+            0% {
+                height: 100;
+                bottom: 0;
+            }
+
+            100% {
+                height: 100px;
+                /* Adjust height as needed */
+                bottom: calc(100% - 100px);
+                /* Adjust distance as needed */
+            }
+        }
     </style>
 </head>
 
@@ -121,29 +207,17 @@ input[type="submit"]:hover {
             <input type="text" name="user" id="uid">
             <label for="Password">Password :</label>
             <input type="password" name="pass" id="password">
-            <input type="submit" value="login" name="sub">
+            <input type="button" value="login" name="sub" class="butt">
         </form>
         <!-- Added light elements for animation -->
-        <div class="light-container">
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-        </div>
+
+        <div class="light1"></div>
+        <div class="light2"></div>
+        <div class="light3"></div>
+        <div class="light4"></div>
+
     </div>
-    <script>
-       const loginBox = document.querySelector('.lb');
-const boxRect = loginBox.getBoundingClientRect();
 
-console.log('Top:', boxRect.top);
-console.log('Left:', boxRect.left);
-console.log('Bottom:', boxRect.bottom);
-console.log('Right:', boxRect.right);
-console.log('Width:', boxRect.width);
-console.log('Height:', boxRect.height);
-
-
-    </script>
 </body>
 
 </html>
