@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(30, 30, 31);
+    margin: 0;
+}
+
+.lb {
+    background-color: rgba(41, 39, 39, 0.515);
+    margin: 25vw;
+    padding: 30px;
+    color: orange;
+    border: 2px solid rgb(42, 41, 41);
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px 3px rgb(69, 67, 67);
+    position: relative;
+}
+
+.head {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.head h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+hr {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: orange;
+    border: none;
+    height: 2px;
+}
+
+label {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: calc(100% - 22px);
+    margin: 10px 0;
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 8px;
+    color: orange;
+    font-weight: bolder;
+    background-color: #1d1b1f;
+    transition: ease-out 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a1717;
+    box-shadow: 3px 3px 10px rgb(80, 72, 58);
+}
+
+.light-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: none; /* Initially hidden */
+}
+
+.active {
+    display: block; /* Show when active */
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="lb">
+        <div class="head">
+            <h1>Log in</h1>
+            <hr>
+        </div>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" name="user" id="uid">
+            <label for="Password">Password :</label>
+            <input type="password" name="pass" id="password">
+            <input type="submit" value="login" name="sub">
+        </form>
+        <!-- Added light elements for animation -->
+        <div class="light-container">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+    </div>
+    <script>
+       const loginBox = document.querySelector('.lb');
+const boxRect = loginBox.getBoundingClientRect();
+
+console.log('Top:', boxRect.top);
+console.log('Left:', boxRect.left);
+console.log('Bottom:', boxRect.bottom);
+console.log('Right:', boxRect.right);
+console.log('Width:', boxRect.width);
+console.log('Height:', boxRect.height);
+
+
+    </script>
+</body>
+
+</html>
