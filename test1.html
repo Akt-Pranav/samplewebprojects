@@ -7,23 +7,28 @@
     <title>Document</title>
     <style>
         body {
-            height: 100vh;
+            /* height: 100vh; */
             display: flex;
+            flex-direction: column;
+            /* Ensure elements are stacked vertically */
             align-items: center;
             justify-content: center;
             background-color: rgb(30, 30, 31);
             margin: 0;
+            gap: 57px;
         }
 
         .lb {
+            margin: 110px 50px 85px 50px;
+            height: 30%;
+            width: 30%;
             background-color: rgba(41, 39, 39, 0.515);
-            margin: 25vw;
             padding: 30px;
             padding-left: 50px;
             color: orange;
             border: 2px solid rgb(42, 41, 41);
             border-radius: 20px;
-            box-shadow: 3px 3px 10px 3px rgb(69, 67, 67);
+            /* box-shadow: 3px 3px 10px 3px rgb(69, 67, 67); */
             position: relative;
         }
 
@@ -39,7 +44,7 @@
         }
 
         hr {
-            width: 40%;
+            width: 30%;
             margin: auto;
             margin-bottom: 20px;
             background-color: orange;
@@ -92,21 +97,8 @@
             /* Neon glow effect */
             transition: 0.5s ease-in-out;
             animation: moveRight 3s linear infinite;
-            /* Use linear animation for constant speed */
-
         }
 
-        @keyframes moveRight {
-            from {
-                left: 0;
-                /* Start from the left */
-            }
-
-            to {
-                left: calc(100% - 100px);
-                /* Move to the right until the end of the container */
-            }
-        }
 
         .light2 {
             position: absolute;
@@ -115,26 +107,12 @@
             width: 3px;
             /* Adjust width as needed */
             height: 100px;
-            background-color: orange; 
+            background-color: orange;
             transition: 0.5s ease-in-out;
             box-shadow: 0 0 10px 5px #f18902;
             /* Neon glow effect */
             animation: moveDown 3s linear infinite;
 
-        }
-
-        @keyframes moveDown {
-            0% {
-                height: 100;
-                top: 0;
-            }
-
-            100% {
-                height: 100px;
-                /* Adjust height as needed */
-                top: calc(100% - 100px);
-                /* Adjust distance as needed */
-            }
         }
 
         .light3 {
@@ -152,19 +130,6 @@
             /* Use linear animation for constant speed */
         }
 
-        @keyframes moveLeft {
-            from {
-                right: 0;
-                /* Start from the left */
-            }
-
-            to {
-                right: calc(100% - 100px);
-                /* Move to the right until the end of the container */
-            }
-        }
-
-
         .light4 {
             position: absolute;
             bottom: 0;
@@ -179,6 +144,63 @@
             animation: moveup 3s linear infinite;
             /* Use linear animation for constant speed */
         }
+        @media (max-width: 1100px) {
+            /* body{
+                gap: 54px;
+            } */
+            .lb{
+                width: 40%;
+            }
+        }
+        @media (max-width: 700px) {
+            body{
+                gap: 54px;
+            }
+            .lb{
+                width: 50%;
+            }
+        }
+
+        @keyframes moveRight {
+            from {
+                left: 0;
+                /* Start from the left */
+            }
+
+            to {
+                left: calc(100% - 100px);
+                /* Move to the right until the end of the container */
+            }
+        }
+
+        @keyframes moveDown {
+            0% {
+                height: 100;
+                top: 0;
+            }
+
+            100% {
+                height: 100px;
+                /* Adjust height as needed */
+                top: calc(100% - 100px);
+                /* Adjust distance as needed */
+            }
+        }
+
+
+        @keyframes moveLeft {
+            from {
+                right: 0;
+                /* Start from the left */
+            }
+
+            to {
+                right: calc(100% - 100px);
+                /* Move to the right until the end of the container */
+            }
+        }
+
+
 
         @keyframes moveup {
             0% {
@@ -188,10 +210,29 @@
 
             100% {
                 height: 100px;
-                /* Adjust height as needed */
                 bottom: calc(100% - 100px);
-                /* Adjust distance as needed */
             }
+        }
+
+        footer {
+            background-color: #1d1b1f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 92%;
+            margin-bottom: -180px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+
+            margin: 0 auto;
+        }
+
+        .cmnm {
+            color: orange;
+            font-weight: bolder;
+            padding: 3px;
         }
     </style>
 </head>
@@ -217,7 +258,12 @@
         <div class="light4"></div>
 
     </div>
-
+    <footer>
+        <div class="footer-content">
+            <!-- Content of your footer -->
+            <p>All rights reserved to &copy; <span class="cmnm">PKSA</span> 2024.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
